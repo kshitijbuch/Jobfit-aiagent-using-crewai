@@ -107,3 +107,87 @@ ________________________________________
 🙏 Acknowledgment
 Built during my learning journey with Outskill's AI Agents program.
 
+
+
+
+
+
+⚙️ Setup Instructions
+1. Clone the repository
+git clone https://github.com/kshitijbuch/Jobfit-aiagent-using-crewai.git
+cd Jobfit-aiagent-using-crewai
+2. Install UV (if not installed)
+pip install uv
+3. Create .env file
+
+Create a file named:
+
+.env
+
+Add:
+
+OPENAI_API_KEY=your_api_key_here
+MODEL=gpt-4o-mini
+
+⚠️ This file is ignored via .gitignore for security.
+
+4. Sync environment
+uv sync
+5. Run the agent
+uv run crewai run
+
+
+📂 Input Files
+
+Update these before running:
+
+File	Purpose
+knowledge/resume.md	Candidate resume
+knowledge/job1.md	Job description
+
+
+🧠 Output
+
+The system generates:
+
+Candidate profile
+
+Job spec
+
+Fit score
+
+Gap analysis
+
+Resume improvement suggestions
+
+Excel-ready output row
+
+
+🧩 Built With
+
+CrewAI
+
+OpenAI
+
+UV
+
+YAML Agent Architecture
+
+
+🎯 Use Case
+
+Helps recruiters, engineers, and job seekers:
+
+✔ Evaluate job-fit
+✔ Identify skill gaps
+✔ Improve resume targeting
+✔ Create structured hiring insights
+
+
+🚀 Learning Purpose
+
+Built as part of my journey into:
+
+AI Agents
+LLM orchestration
+Structured reasoning systems
