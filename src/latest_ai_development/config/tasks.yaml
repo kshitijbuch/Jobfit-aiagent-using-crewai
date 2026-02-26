@@ -1,0 +1,58 @@
+resume_profiling_task:
+  description: >
+    Use the tool to read resume.md.
+    Then produce a structured candidate profile.
+    Output must be JSON (only JSON).
+  expected_output: >
+    JSON object with keys:
+    - name (if present)
+    - target_roles (list)
+    - domain_strengths (list)
+    - hard_skills (list)
+    - soft_skills (list)
+    - tools_tech (list)
+    - achievements (list)
+    - experience_summary (string)
+    - industries (list)
+    - education (list)
+    - location_preference (India)
+    - constraints (list)
+  agent: resume_profiler
+
+
+job_extraction_task:
+  description: >
+    Use the tool to read job2.md.
+    Then convert it to a structured job specification.
+    Output must be JSON (only JSON).
+  expected_output: >
+    JSON object with keys:
+    - job_title
+    - company (if present)
+    - location
+    - experience_level (string)
+    - responsibilities (list)
+    - required_skills (list)
+    - preferred_skills (list)
+    - tools_tech (list)
+    - keywords (list)
+    - job_link
+  agent: job_extractor
+
+
+fit_scoring_task:
+  description: >
+    Compare the resume profile JSON with the job specification's JSON.
+    Produce:
+    1) Fit rating as a NUMBER ONLY (0-10)
+    2) Domain Match (descriptive phrase)
+    3) Skills Match (descriptive phrase)
+    4) Responsibilities Match (descriptive phrase)
+    5) Key Gaps (bullet list)
+    6) 3 Resume Tweaks (bullet list)
+    7) ONE Excel-ready row (single line, tab-separated) in this exact column order:
+       Date, Country, City, Company, Job Title, Source, Job Link, Fit Rating, Domain Match, Skills Match, Responsibilities Match, Key Gaps, Notes
+    Output must be plain text (not JSON). No markdown tables.
+  expected_output: >
+    Plain text sectioned output + one final TSV line for Excel.
+  agent: fit_scorer
