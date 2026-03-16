@@ -18,11 +18,11 @@ def run():
 
     # Try root first, then fallback to /knowledge
     resume_path = root / "resume.md"
-    job_path = root / "job2.md"
+    job_path = root / "job3.md"
     if not resume_path.exists():
         resume_path = root / "knowledge" / "resume.md"
     if not job_path.exists():
-        job_path = root / "knowledge" / "job2.md"
+        job_path = root / "knowledge" / "job3.md"
 
     resume_text = resume_path.read_text(encoding="utf-8")
     job_posting_text = job_path.read_text(encoding="utf-8")

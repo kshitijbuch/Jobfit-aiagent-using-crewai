@@ -22,7 +22,7 @@ resume_profiling_task:
 
 job_extraction_task:
   description: >
-    Use the tool to read job2.md.
+    Use the tool to read job3.md.
     Then convert it to a structured job specification.
     Output must be JSON (only JSON).
   expected_output: >
